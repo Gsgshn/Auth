@@ -1,7 +1,8 @@
 using Auth.Application.Interfaces;
 using Auth.Data;
-using Auth.Endpoints;
+
 using Auth.Infrastructure;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,7 +34,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseEndpoints(endpoints => endpoints.MapControllers());
+app.UseRouting();
+
+
 
 app.UseHttpsRedirection();
 
